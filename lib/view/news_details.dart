@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:news_app_final/view/aisummary.dart';
 
 class NewsDetails extends StatefulWidget {
   final String newsImage, newsTitle, newsDate, author, description, content, source;
@@ -35,6 +36,16 @@ class _NewsDetailsState extends State<NewsDetails> {
 
     return Scaffold(
       appBar: AppBar(
+        actions: [ IconButton(
+          icon: const Icon(Icons.arrow_forward),
+          onPressed: () {
+            print(widget.url);
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Aisummary(
+              url: widget.url,
+            )));
+          },
+        ),
+        ],
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),

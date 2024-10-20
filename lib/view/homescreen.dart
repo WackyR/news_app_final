@@ -119,6 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       DateTime dateTime = DateTime.parse(snapshot.data!.articles![index].publishedAt.toString());
                     return InkWell(
                       onTap: (){
+                        print(snapshot.data!.articles![index].url);
                         Navigator.push(context, MaterialPageRoute(builder: (context) => NewsDetails(
                           newsImage: snapshot.data!.articles![index].urlToImage.toString(), 
                           newsTitle: snapshot.data!.articles![index].title.toString(), 
